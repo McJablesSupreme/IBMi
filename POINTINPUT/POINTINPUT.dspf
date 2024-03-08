@@ -1,0 +1,200 @@
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'PRESS F3 TO EXIT')
+     A          R SCRN1
+     A                                  2 28'Student Data Entry Utility'
+     A                                  3  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                 22  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                  9 23'Input student number and press ENT-
+     A                                      ER'
+     A                                      COLOR(YLW)
+     A            STUNOIN        9N 0B 11 41
+     A  90                                  ERRMSG('ID NOT FOUND' 90)
+     A                                 11 23'Student Number. .'
+     A                                  1  5DATE(*YY)
+     A                                      EDTWRD('  /  /    ')
+     A                                      COLOR(TRQ)
+     A                                  1 64'Justin Becker'
+     A                                      COLOR(TRQ)
+     A                                 23  5'PRESS F3 TO EXIT'
+     A                                      COLOR(YLW)
+     A                                  4  5'*'
+     A                                  7  5'*'
+     A                                  5  5'*'
+     A                                  6  5'*'
+     A                                  8  5'*'
+     A                                  9  5'*'
+     A                                 10  5'*'
+     A                                 11  5'*'
+     A                                 12  5'*'
+     A                                 13  5'*'
+     A                                 14  5'*'
+     A                                 15  5'*'
+     A                                 17  5'*'
+     A                                 16  5'*'
+     A                                 19  5'*'
+     A                                 18  5'*'
+     A                                 21  5'*'
+     A                                 20  5'*'
+     A                                  4 76'*'
+     A                                  5 76'*'
+     A                                  7 76'*'
+     A                                  6 76'*'
+     A                                  8 76'*'
+     A                                  9 76'*'
+     A                                 10 76'*'
+     A                                 11 76'*'
+     A                                 12 76'*'
+     A                                 13 76'*'
+     A                                 14 76'*'
+     A                                 15 76'*'
+     A                                 16 76'*'
+     A                                 17 76'*'
+     A                                 18 76'*'
+     A                                 19 76'*'
+     A                                 21 76'*'
+     A                                 20 76'*'
+     A                                  1 28'Muskegon Community College'
+     A          R SCRN2
+     A                                  3  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                 22  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                  2 28'Student Data Entry Utility'
+     A                                  1 64'Justin Becker'
+     A                                      COLOR(TRQ)
+     A                                 23  5'PRESS F3 TO EXIT'
+     A                                      COLOR(YLW)
+     A                                  1  5DATE(*YY)
+     A                                      EDTWRD('  /  /    ')
+     A                                      COLOR(TRQ)
+     A                                  1 28'Muskegon Community College'
+     A                                  4  5'*'
+     A                                  5  5'*'
+     A                                  6  5'*'
+     A                                  7  5'*'
+     A                                  8  5'*'
+     A                                  9  5'*'
+     A                                 10  5'*'
+     A                                 12  5'*'
+     A                                 11  5'*'
+     A                                 13  5'*'
+     A                                 14  5'*'
+     A                                 15  5'*'
+     A                                 16  5'*'
+     A                                 17  5'*'
+     A                                 18  5'*'
+     A                                 19  5'*'
+     A                                 20  5'*'
+     A                                 21  5'*'
+     A                                  4 76'*'
+     A                                  5 76'*'
+     A                                  7 76'*'
+     A                                  6 76'*'
+     A                                  8 76'*'
+     A                                  9 76'*'
+     A                                 10 76'*'
+     A                                 11 76'*'
+     A                                 12 76'*'
+     A                                 13 76'*'
+     A                                 14 76'*'
+     A                                 15 76'*'
+     A                                 16 76'*'
+     A                                 17 76'*'
+     A                                 18 76'*'
+     A                                 19 76'*'
+     A                                 20 76'*'
+     A                                 21 76'*'
+     A                                  6 15'STUDENT NAME:'
+     A            FULLNAME      26   O  6 29
+     A                                 12 14'Assignment Description . .'
+     A                                 15 21'Points Received . .'
+     A                                 18 21'Points Possible . .'
+     A                                  9 19'Input entries for all fields and p-
+     A                                      ress ENTER'
+     A                                      COLOR(YLW)
+     A            HWDESCIN      20   B 12 41
+     A  96                                  ERRMSG('Entry cannot exceed 40 char-
+     A                                      acters' 96)
+     A            PTSRCVIN       3Y 0B 15 41VALNUM
+     A            PTSPOSIN       3Y 0B 18 41VALNUM
+     A  95                                  ERRMSG('Must be greater than 0' 95)
+     A          R SCRN3
+     A                                  3  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                 22  5'**********************************-
+     A                                      ***********************************-
+     A                                      ***'
+     A                                  2 28'Student Data Entry Utility'
+     A                                  1 64'Justin Becker'
+     A                                      COLOR(TRQ)
+     A                                 23  5'PRESS F3 TO EXIT'
+     A                                      COLOR(YLW)
+     A                                  1  5DATE(*YY)
+     A                                      COLOR(TRQ)
+     A                                      EDTWRD('  /  /    ')
+     A                                  1 28'Muskegon Community College'
+     A                                  4 76'*'
+     A                                  5 76'*'
+     A                                  6 76'*'
+     A                                  7 76'*'
+     A                                  8 76'*'
+     A                                  9 76'*'
+     A                                 10 76'*'
+     A                                 11 76'*'
+     A                                 12 76'*'
+     A                                 13 76'*'
+     A                                 19 76'*'
+     A                                 18 76'*'
+     A                                 17 76'*'
+     A                                 16 76'*'
+     A                                 15 76'*'
+     A                                 14 76'*'
+     A                                 20 76'*'
+     A                                 21 76'*'
+     A                                  4  5'*'
+     A                                  5  5'*'
+     A                                  6  5'*'
+     A                                  7  5'*'
+     A                                  8  5'*'
+     A                                  9  5'*'
+     A                                 10  5'*'
+     A                                 11  5'*'
+     A                                 12  5'*'
+     A                                 13  5'*'
+     A                                 19  5'*'
+     A                                 18  5'*'
+     A                                 17  5'*'
+     A                                 16  5'*'
+     A                                 15  5'*'
+     A                                 14  5'*'
+     A                                 20  5'*'
+     A                                 21  5'*'
+     A                                  8 16'Student Grade Percentage:'
+     A            PERCENTAGE     6   O  8 42
+     A            PASSORFAIL    14   O 10 34
+     A                                 14 20'Press ENTER to input another stude-
+     A                                      nt record'
+     A                                      COLOR(YLW)
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="SCRN 1">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN1" />
+     A*%%RS+ </sequence>
+     A*%%RS+ <sequence name="SCRN 2">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN2" />
+     A*%%RS+ </sequence>
+     A*%%RS+ <sequence name="SCRN 3">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN3" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 
