@@ -1,0 +1,117 @@
+     A                                      REF(MYINSTP)
+     A                                      INDARA
+     A                                      CA03(03 'F3=EXIT')
+     A                                      VLDCMDKEY(25)
+     A          R MAINMENU
+     A                                  1 32'Wibaux University'
+     A                                  2 28'Instructor File Maintenance'
+     A                                  3 35'Justin Becker'
+     A                                  1 71DATE
+     A                                      EDTWRD('  /  /  ')
+     A                                  6 19'Social Security Number  . .'
+     A                                  7 19'Action code . . . . . . . .'
+     A                                  8 22'A = add record'
+     A                                  9 22'C = change record'
+     A                                 10 22'D = delete record'
+     A                                 13 28'Type values and press ENTER'
+     A                                 20  4'F3=EXIT'
+     A            INSTNO    R     Y  B  6 47
+     A  30                                  ERRMSG('Record already exists' 30)
+     A  31                                  ERRMSG('Record not found' 31)
+     A  32                                  ERRMSG('Action code is a required -
+     A                                      field' 32)
+     A  35                                  ERRMSG('Action code is invalid' 35)
+     A  37                                  ERRMSG('Social Security Number mus-
+     A                                      t be 9 digits' 37)
+     A            ACTIONCODE     1   I  7 47
+     A          R INFOSCREEN                CA12(12 'F12=CANCEL')
+     A                                  1 71DATE
+     A                                      EDTWRD('  /  /  ')
+     A                                  1 32'Wibaux University'
+     A                                  2 28'Instructor File Maintenance'
+     A                                  3 35'Justin Becker'
+     A                                 20  4'F3=EXIT'
+     A                                 20 14'F12=CANCEL'
+     A                                  5 19'Social Security Number . .'
+     A                                  6 19'First Name . . . . . . . .'
+     A                                  7 19'Last Name  . . . . . . . .'
+     A                                  8 19'Department . . . . . . . .'
+     A                                  9 19'Salary . . . . . . . . . .'
+     A                                 10 19'Rank . . . . . . . . . . .'
+     A                                 11 19'Sex  . . . . . . . . . . .'
+     A                                 12 19'Date of Hire . . . . . . .'
+     A                                 13 19'Marital Status . . . . . .'
+     A                                 14 19'Number of Dependents . . .'
+     A                                 15 19'Tenured (Y/N)  . . . . . .'
+     A                                 16 19'Preferred Title  . . . . .'
+     A                                 18 20'When finished, press ENTER to'
+     A  40                             18 50'ADD record'
+     A                                      COLOR(TRQ)
+     A  41                             18 50'UPDATE record'
+     A                                      COLOR(TRQ)
+     A  42                             18 50'DELETE record'
+     A                                      COLOR(RED)
+     A            INSTNO    R        O  5 47
+     A            IFNAME    R        B  6 47
+     A  42                                  DSPATR(PR)
+     A            ILNAME    R        B  7 47
+     A  42                                  DSPATR(PR)
+     A            DEPT      R        B  8 47
+     A  42                                  DSPATR(PR)
+     A            SALARY    R     Y  B  9 47VALNUM
+     A  42                                  DSPATR(PR)
+     A                                      EDTCDE(J $)
+     A            RANKIN         1Y 0B 10 47RANGE(1 4)
+     A                                      VALNUM
+     A  42                                  DSPATR(PR)
+     A            SEX       R        B 11 47
+     A  38                                  ERRMSG('Must be only M or F' 38)
+     A  42                                  DSPATR(PR)
+     A            HIRDATIN        L  B 12 47DATFMT(*USA)
+     A  42                                  DSPATR(PR)
+     A  33                                  ERRMSG('Dates must be in MDY forma-
+     A                                      t' 33)
+     A            MARSTS    R        B 13 47
+     A  42                                  DSPATR(PR)
+     A  34                                  ERRMSG('Valid options are: M = Mar-
+     A                                      ried, S = Single, D = Divorced' 34)
+     A            DEPEND    R     Y  B 14 47VALNUM
+     A  42                                  DSPATR(PR)
+     A            TENURE    R        B 15 47
+     A  42                                  DSPATR(PR)
+     A  36                                  ERRMSG('Only Y or N are allowed in-
+     A                                       this field' 36)
+     A            TITLEIN        1Y 0B 16 47RANGE(1 4)
+     A                                      VALNUM
+     A  42                                  DSPATR(PR)
+     A          R CONFIRMDLT                CA12(12 'F12=CANCEL')
+     A                                  6 34'!!! WARNING !!!'
+     A                                      COLOR(RED)
+     A                                      DSPATR(BL)
+     A                                      DSPATR(UL)
+     A                                  8 24'You are about to delete this recor-
+     A                                      d'
+     A                                 10 27'This action cannot be undone'
+     A                                      DSPATR(UL)
+     A                                 12 25'Are you sure you want to proceed?'
+     A                                 14 37'Y/N'
+     A            YNDELETE       1   I 14 41
+     A  36                                  ERRMSG('Only Y or N are allowed in-
+     A                                       this field' 36)
+     A                                 20  4'F3=EXIT'
+     A                                 20 14'F12=CANCEL'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="MAIN">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="MAINMENU" />
+     A*%%RS+ </sequence>
+     A*%%RS+ <sequence name="UPDATESCRN">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="INFOSCREEN" />
+     A*%%RS+ </sequence>
+     A*%%RS+ <sequence name="ConfirmationScreen">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="CONFIRMDLT" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 
