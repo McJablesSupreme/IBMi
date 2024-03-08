@@ -1,0 +1,36 @@
+     A          R HEADER                    SKIPB(1)
+     A                                     2DATE(*YY)
+     A                                      EDTWRD('  /  /    ')
+     A                                    23'Justin Becker'
+     A                                    50'Wexler University Student Final Gr-
+     A                                      ades'
+     A                                   128PAGNBR
+     A                                   123'Page'
+     A                                     1' *********************************-
+     A                                      ***********************************-
+     A                                      ***********************************-
+     A                                      ***************************'
+     A                                      SPACEB(1)
+     A                                    10'Student Number'
+     A                                      SPACEB(1)
+     A                                    33'Name'
+     A                                    74'Average Grade'
+     A                                    99'Letter Grade'
+     A                                     1' ----------------------------------
+     A                                      ------------------------------------
+     A                                      ------------------------------------
+     A                                      ---------------------------'
+     A                                      SPACEB(1)
+     A          R DETAIL
+     A            STUNO          9  0     12SPACEB(1)
+     A            FULLNAME      40        33
+     A            AVGGRADE       4  0     77EDTCDE(J)
+     A            LETGRADE       2       104
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="Untitled">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADER" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 
